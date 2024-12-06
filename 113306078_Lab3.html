@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div>
+		<h1>113306078_Lab3_Number Guessing Game</h1>		
+	</div>
+
+	<script>
+		var attempts = 7;
+		var min = 1;
+		var max = 100;
+		var answer = Math.floor(Math.random()*100) + 1;
+		var guess;
+
+		while(attempts >= 0){
+			var guess = window.prompt("Enter number:");
+			attempts--;
+
+			if(guess > answer){
+
+				max = guess;
+			}
+
+			if(guess < answer){
+
+				min = guess;
+			}
+
+			if(guess == answer){
+				alert("Bingo!");
+				break;
+			
+			}else if(guess == 1 || guess == 100){
+
+				alert("The answer is between 1 and 100.");
+			
+			}else if(guess != answer){
+				
+				alert("You got wrong answer." + "\nThe answer is between " + min + " and " + max);	
+
+			}
+
+			
+			if(attempts == 0){
+
+				alert('The answer is: ' + answer);
+				break;
+			}
+		}
+
+		document.writeln('<img src = "wrong.jpg">')
+
+	</script>
+</body>
+</html>
